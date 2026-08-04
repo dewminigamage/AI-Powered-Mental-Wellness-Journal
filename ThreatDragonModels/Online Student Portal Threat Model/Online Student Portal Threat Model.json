@@ -1,0 +1,28 @@
+{
+  "version": "2.6.2",
+  "release_version": "1.0",
+  "released_at": "2026-08-04",
+  "summary": {
+    "title": "Online Student Portal Threat Model",
+    "owner": "Dewmini Navodya",
+    "description": "An online university student portal where students can view examination results, lecturers can upload and modify marks, and administrators can manage user accounts. Student information and examination results are stored in a database, and the portal is accessible through the Internet.",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "New STRIDE diagOnline Student Portal Data-Flow Diagramram",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.6.2",
+        "cells": []
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "Leave empty",
+    "threatTop": 0
+  }
+}
