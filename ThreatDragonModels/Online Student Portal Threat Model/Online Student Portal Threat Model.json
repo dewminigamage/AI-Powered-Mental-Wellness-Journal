@@ -54,13 +54,6 @@
                 "1303c5b0-84ee-4dd9-9efc-08aaceedfa58",
                 "daf36c2b-4515-40f5-9fbb-f5dddb2abb6f"
               ]
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -548,8 +541,8 @@
                 "text": "Authentication Service"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -646,12 +639,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "handlesCardPayment": false,
               "handlesGoodsOrServices": false,
               "isWebApplication": false,
               "privilegeLevel": "",
-              "threats": []
+              "threats": [
+                {
+                  "id": "81c2b929-7bd7-49a5-b605-c572bfcb3239",
+                  "title": "Stolen Credentials Used to Access the Portal",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Spoofing",
+                  "description": "An attacker could use stolen credentials to impersonate a student, lecturer or administrator and gain unauthorized access to the portal.",
+                  "mitigation": "Implement multi-factor authentication, strong password controls and account lockout after five unsuccessful login attempts.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "tampering": 0,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0,
+                "elevationOfPrivilege": 0
+              }
             }
           },
           {
@@ -668,11 +683,13 @@
                 "text": "Student Portal Database"
               },
               "topLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               },
               "bottomLine": {
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
@@ -769,13 +786,33 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isALog": false,
               "isEncrypted": false,
               "isSigned": false,
               "storesCredentials": false,
               "storesInventory": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "c5bfd065-9777-492b-a859-7225b93b3b59",
+                  "title": "Unauthorized Modification of Examination Marks",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Tampering",
+                  "description": "An attacker or unauthorized user could modify examination marks stored in the student portal database.",
+                  "mitigation": "Implement role-based access control, server-side authorization and tamper-resistant audit logging for every mark change.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "tampering": 1,
+                "repudiation": 0,
+                "informationDisclosure": 0,
+                "denialOfService": 0
+              }
             }
           },
           {
@@ -1136,7 +1173,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -1157,15 +1195,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
+              "threats": [
+                {
+                  "id": "ee9f10fd-c41e-44a6-ab41-17f9d42095fd",
+                  "title": "Examination Results Intercepted During Transmission",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "An attacker could intercept confidential examination results if the data is transmitted through an insecure network connection.",
+                  "mitigation": "Install a valid TLS certificate, enforce HTTPS and reject all unencrypted HTTP connections.",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 4,
+                  "score": ""
+                }
+              ],
               "trustBoundaryIds": [
                 "2993a0b9-8da6-4f15-8c16-861ed378dbda"
-              ]
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "Examination Results Response"
@@ -1179,7 +1236,17 @@
               "cell": "65740c63-e64b-40dd-b363-3c2358e7ea97",
               "port": "84748435-0f33-414c-9673-89b5df3772a9"
             },
-            "vertices": []
+            "vertices": [],
+            "tools": {
+              "items": [
+                "boundary",
+                "button-remove",
+                "vertices",
+                "source-arrowhead",
+                "target-arrowhead"
+              ],
+              "name": null
+            }
           }
         ],
         "description": "Data-flow diagram showing the users, processes, database and data flows of the online student portal."
@@ -1187,6 +1254,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "Leave empty",
-    "threatTop": 0
+    "threatTop": 4
   }
 }
